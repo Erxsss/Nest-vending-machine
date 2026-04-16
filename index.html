@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="mn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Vending Machine</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background: #020617;
+        color: #fff;
+      }
+
+      /* NAV */
+      nav {
+        position: fixed;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 50px;
+        backdrop-filter: blur(20px);
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+      }
+
+      nav h1 {
+        font-size: 22px;
+        font-weight: 800;
+        background: linear-gradient(90deg, #38bdf8, #22c55e);
+        -webkit-background-clip: text;
+        color: transparent;
+      }
+
+      nav a {
+        font-size: 16px;
+        color: #aaa;
+        margin-left: 25px;
+        text-decoration: none;
+      }
+      nav a:hover {
+        color: #fff;
+      }
+
+      /* HERO */
+      .hero {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+
+      .hero h1 {
+        font-size: 80px;
+        font-weight: 800;
+        background: linear-gradient(90deg, #38bdf8, #22c55e, #38bdf8);
+        -webkit-background-clip: text;
+        color: transparent;
+      }
+
+      .hero p {
+        font-size: 20px;
+        color: #94a3b8;
+        margin-top: 20px;
+      }
+
+      .btn {
+        margin-top: 30px;
+        padding: 15px 40px;
+        border-radius: 40px;
+        border: none;
+        font-size: 18px;
+        font-weight: 600;
+        background: linear-gradient(90deg, #38bdf8, #22c55e);
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      .btn:hover {
+        transform: scale(1.1);
+        box-shadow: 0 20px 60px rgba(56, 189, 248, 0.5);
+      }
+
+      /* SECTION */
+      section {
+        padding: 120px 20px;
+        max-width: 1200px;
+        margin: auto;
+      }
+
+      .title {
+        font-size: 42px;
+        font-weight: 800;
+        text-align: center;
+        margin-bottom: 50px;
+        background: linear-gradient(90deg, #38bdf8, #22c55e);
+        -webkit-background-clip: text;
+        color: transparent;
+      }
+
+      /* CARD */
+      .card {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(20px);
+        border-radius: 20px;
+        padding: 30px;
+        text-align: center;
+        transition: 0.4s;
+      }
+
+      .card:hover {
+        transform: translateY(-15px) scale(1.05);
+        box-shadow: 0 30px 80px rgba(56, 189, 248, 0.3);
+      }
+
+      /* GRID */
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+      }
+
+      /* IMAGE */
+      .image {
+        width: 100%;
+        border-radius: 15px;
+        margin-top: 20px;
+      }
+
+      #about .image {
+        max-width: 900px;
+        display: block;
+        margin: 40px auto;
+      }
+
+      /* TEXT */
+      .card h3 {
+        font-size: 22px;
+        margin-bottom: 10px;
+      }
+
+      .card p {
+        color: #94a3b8;
+        font-size: 15px;
+      }
+
+      /* SOCIAL */
+      .social {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 25px;
+      }
+
+      .social a {
+        padding: 14px 20px;
+        border-radius: 50px;
+        background: rgba(255, 255, 255, 0.1);
+        text-decoration: none;
+        color: #fff;
+        transition: 0.3s;
+      }
+
+      .social a:hover {
+        background: #38bdf8;
+        transform: scale(1.1);
+      }
+
+      /* FOOTER */
+      footer {
+        text-align: center;
+        padding: 50px;
+        color: #777;
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav>
+      <h1>Vending</h1>
+      <div>
+        <a href="#about">Тухай</a>
+        <a href="#features">Онцлог</a>
+        <a href="#hardware">Төхөөрөмж</a>
+        <a href="#contact">Холбоо</a>
+      </div>
+    </nav>
+
+    <div class="hero">
+      <h1>Smart Vending Machine</h1>
+      <p>Ирээдүйн автомат худалдааны систем</p>
+      <button
+        class="btn"
+        onclick="
+          document
+            .getElementById('about')
+            .scrollIntoView({ behavior: 'smooth' })
+        "
+      >
+        Эхлэх
+      </button>
+    </div>
+
+    <section id="about">
+      <h2 class="title">🚀 Төслийн тухай</h2>
+      <div class="card">
+        Tablet удирдлагатай, keypadгүй, бүрэн ухаалаг vending machine
+      </div>
+      <img src="mainPic.png" class="image" />
+    </section>
+
+    <section id="features">
+      <h2 class="title">⚡ Онцлог</h2>
+      <div class="grid">
+        <div class="card"><h3>📱 Tablet Control</h3></div>
+        <div class="card"><h3>❌ Keypad Free</h3></div>
+        <div class="card"><h3>📏 Compact Design</h3></div>
+      </div>
+    </section>
+
+    <section id="hardware">
+      <h2 class="title">🔧 Ашигласан төхөөрөмж</h2>
+
+      <div class="grid">
+        <div class="card">
+          <h3>⚙️ Stepper Motor</h3>
+          <p>Бараа эргүүлж гаргах мотор</p>
+          <img src="motor.jpg" class="image" />
+        </div>
+
+        <div class="card">
+          <h3>🧠 Arduino Mega</h3>
+          <p>Төхөөрөмжийг удирдах микроконтроллер</p>
+          <img src="arduino.png" class="image" />
+        </div>
+
+        <div class="card">
+          <h3>📱 Tablet</h3>
+          <p>Хэрэглэгчийн touch дэлгэц</p>
+          <img src="tablet.png" class="image" />
+        </div>
+
+        <div class="card">
+          <h3>💡 LED Light</h3>
+          <p>Гэрэлтүүлэг болон мэдээлэл харуулах</p>
+          <img src="led.jpg" class="image" />
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2 class="title">📞 Холбоо барих</h2>
+      <div class="card">
+        <p style="font-size: 20px">VENDING MACHINE TEAM</p>
+        <p style="font-size: 22px; margin-top: 10px">📱 88880888</p>
+
+        <div class="social">
+          <a href="https://facebook.com" target="_blank">Facebook</a>
+          <a href="https://instagram.com" target="_blank">Instagram</a>
+        </div>
+      </div>
+    </section>
+
+    <footer>© 2026 Smart Vending Machine</footer>
+  </body>
+</html>
